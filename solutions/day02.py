@@ -34,7 +34,7 @@ def _count_letters(box_id: str) -> Dict[str, int]:
     return count
 
 
-def _letters_in_common(box_id_1: str, box_id_2: str) -> List[int]:
+def _letters_in_common(box_id_1: str, box_id_2: str) -> List[str]:
     """Returns the letters two box IDs have in common in the same position.
 
     For example:
@@ -45,14 +45,12 @@ def _letters_in_common(box_id_1: str, box_id_2: str) -> List[int]:
         box_id_2: Second box ID.
 
     Returns:
-        A string containing the letters the two box IDs have in common in the
-        same position.
+        A list of the letters the two box IDs have in common in the same
+        position.
     """
-    common_letters = ''
-    for (letter_1, letter_2) in zip(box_id_1, box_id_2):
-        if letter_1 == letter_2:
-            common_letters += letter_1
-    return common_letters
+    return [
+        let_1 for (let_1, let_2) in zip(box_id_1, box_id_2) if let_1 == let_2
+    ]
 
 
 def _similar_box_ids(box_ids: List[str]) -> Tuple[str, str]:
@@ -102,7 +100,7 @@ def get_similar_box_ids_overlap(input_string: str) -> str:
     """
     box_ids = _read_box_ids(input_string)
     correct_box_ids = _similar_box_ids(box_ids)
-    return _letters_in_common(*correct_box_ids)
+    return ''.join(_letters_in_common(*correct_box_ids))
 
 
 def _run_tests() -> None:
