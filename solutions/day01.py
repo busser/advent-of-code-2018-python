@@ -59,7 +59,8 @@ def get_final_frequency(input_string: str) -> int:
         input_string: The puzzle input.
 
     Returns:
-        The final frequency after applying all changes."""
+        The final frequency after applying all changes.
+    """
     changes = _read_changes(input_string)
     frequency = 0
     for change in changes:
