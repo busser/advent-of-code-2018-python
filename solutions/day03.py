@@ -1,4 +1,35 @@
-"""Solution to day 03 of the Advent of Code."""
+"""Solution to day 03 of the Advent of Code.
+
+Reading input:
+    Each line in the input contains five integers we are interested in,
+    separated by meaningless characters. We can use regular expressions to find
+    those integers and store them in an easy-to-use format. See _read_claims
+    function.
+
+Number of claims per square:
+    In order to count the number of times any square inch of fabric has been
+    claimed, we build a matrix of zeros representing the square inches of
+    fabric. For each claim, we increment the values of each of the squares in
+    the claim's area. This builds a matrix where each cell contains the number
+    of times the corresponding square inch has been claimed. See
+    _count_claims_per_square function.
+
+Part 1:
+    Once we have the number of times each square inch of fabric has been
+    claimed, all we need to do is count the number of cells that have a value of
+    two or more. See count_overclaimed_squares function.
+
+Overlapping claims:
+    Checking if a claim overlaps with any other comes down to checking if each
+    square inch of fabric in the claim's area has a value of 1 in the matrix
+    built by the _count_claims_per_square function. See _claim_overlaps
+    function.
+
+Part 2:
+    After counting the number of claims for each square inch, we can check each
+    claim to find the one that overlaps with no other and obtain its ID. See
+    get_intact_claim_id function.
+"""
 
 import itertools
 import re

@@ -1,4 +1,37 @@
-"""Solution to day 02 of the Advent of Code."""
+"""Solution to day 02 of the Advent of Code.
+
+Reading input:
+    Each line in the onput file is a box ID. This is as easy as it gets. See
+    _read_box_ids function.
+
+Counting letters:
+    In order to count the number of times a letter appears in a given box ID, we
+    keep track of the number of times we've seen each letter with a dictionary.
+    The key is the letter and the value is the count so far. See _count_letters
+    function.
+
+Part 1:
+    Computing the checksum is only a question of counting how many words have a
+    2 or 3 in the values of the dictionary returned by _count_letters. See
+    get_checksum function.
+
+Letters in common:
+    Using list comprehensions, we can build a list of the letters any two box
+    IDs have in the same position. Read https://waymoot.org/home/python_string/
+    for an analysis of string concatenation performance in Python. See
+    _letters_in_common function.
+
+Similar box IDs:
+    Two box IDs are similar if the amount of letters they have in the same
+    position is one less than the length of the IDs. We can check if this is the
+    case for every combination of box ID in order to find a pair of similar box
+    IDs. See _similar_box_ids function.
+
+Part 2:
+    Once we have a pair of similar box IDs, we can join the letters they have in
+    common to build the answer we are looking for. See
+    get_similar_box_ids_overlap function.
+"""
 
 import itertools
 from typing import Dict, List, Tuple

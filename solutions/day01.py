@@ -1,4 +1,26 @@
-"""Solution to day 01 of the Advent of Code."""
+"""Solution to day 01 of the Advent of Code.
+
+Reading input:
+    Each line in the input file can be read as an integer. Using Python's int
+    function parses positive and negative numbers equally well, so we will use
+    that. See _read_changes function.
+
+Changing frequency:
+    Applying a change to an existing frequency as simple as adding the two
+    integers that represent the frequency and the frequency change. See
+    _apply_change function.
+
+Part 1:
+    Getting the final frequency means summing up all the frequency changes in
+    our input. We could do this in a single line of Python (yay for list
+    comprehensions!) but we'll use our _apply_change function instead. See
+    get_final_frequency function.
+
+Part 2:
+    To find out which frequency appears twice first, we keep track of all
+    frequencies we've seen in a set (not a list, because that would be much
+    slower!). See get_first_repetition function.
+"""
 
 from typing import List
 
