@@ -91,7 +91,7 @@ def get_checksum(input_string: str) -> int:
     return ids_with_two * ids_with_three
 
 
-def get_similar_box_ids_overlap(input_string) -> str:
+def get_similar_box_ids_overlap(input_string: str) -> str:
     """Finds the common letters in the correct box IDs given an input string.
 
     Args:
