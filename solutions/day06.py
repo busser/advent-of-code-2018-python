@@ -253,7 +253,8 @@ def _run_tests() -> None:
     assert get_safe_area('1, 1\n1, 6\n8, 3\n3, 4\n5, 5\n8, 9', 32) == 16
 
 
-def _print_answers(largest_finite_area: int = None, safe_area: int = None) -> None:
+def _print_answers(largest_finite_area: int = None,
+                   safe_area: int = None) -> None:
     """Prints answers.
 
     Args:
